@@ -1,6 +1,14 @@
 #!/bin/bash
 
+set x
+
 DOTTY_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+OS="`uname`"
+
+if [ "${OS}" = "Linux" ]; then
+   ln -sf "${DOTTY_DIR}/dotfiles/i3" ~/.i3
+   echo wup di du
+fi
 
 
 ln -sf "${DOTTY_DIR}/dotfiles/npm/npmrc" ~/.npmrc
