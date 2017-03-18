@@ -1,0 +1,7 @@
+#!/bin/bash
+
+DOTTY_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+
+ln -sf "${DOTTY_DIR}/dotfiles/npm/npmrc" ~/.npmrc
+
