@@ -154,6 +154,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
         position top
+        binding_mode_indicator yes
 }
 
 # set background color
