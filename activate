@@ -9,7 +9,7 @@ if [ "${OS}" = "Linux" ]
 then
    ln -sf "${DOTTY_DIR}/dotfiles/i3" ~/.i3
    ln -sf "${DOTTY_DIR}/dotfiles/terminal/i3_tab_title" ~/bin/tab_title
-elif ["${OS}" = "Darwin" ]
+elif [ "${OS}" = "Darwin" ]
 then
    ln -sf "${DOTTY_DIR}/dotfiles/terminal/osx_tab_title" ~/bin/tab_title
 fi
