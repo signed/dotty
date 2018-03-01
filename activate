@@ -9,6 +9,5 @@ if [ "${OS}" = "Linux" ]; then
    ln -sf "${DOTTY_DIR}/dotfiles/i3" ~/.i3
 fi
 
-
+ln -sf "${DOTTY_DIR}/dotfiles/terminal/tab_title" ~/bin/tab_title
 ln -sf "${DOTTY_DIR}/dotfiles/npm/npmrc" ~/.npmrc
-
