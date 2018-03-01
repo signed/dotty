@@ -5,9 +5,13 @@ set -x
 DOTTY_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 OS="`uname`"
 
-if [ "${OS}" = "Linux" ]; then
+if [ "${OS}" = "Linux" ]
+then
    ln -sf "${DOTTY_DIR}/dotfiles/i3" ~/.i3
+   ln -sf "${DOTTY_DIR}/dotfiles/terminal/i3_tab_title" ~/bin/tab_title
+elif ["${OS}" = "Darwin" ]
+then
+   ln -sf "${DOTTY_DIR}/dotfiles/terminal/osx_tab_title" ~/bin/tab_title
 fi
 
-ln -sf "${DOTTY_DIR}/dotfiles/terminal/tab_title" ~/bin/tab_title
 ln -sf "${DOTTY_DIR}/dotfiles/npm/npmrc" ~/.npmrc
