@@ -10,12 +10,74 @@ mkdir -p ${USER_BIN}
 
 if [ "${OS}" = "Linux" ]
 then
-   ln -sf "${DOTTY_DIR}/dotfiles/i3" ~/.i3
-   ln -sf "${DOTTY_DIR}/dotfiles/terminal/i3_tab_title" ${USER_BIN}/tab_title
+  ln -sf "${DOTTY_DIR}/dotfiles/i3" ~/.i3
+  ln -sf "${DOTTY_DIR}/dotfiles/terminal/i3_tab_title" ${USER_BIN}/tab_title
 elif [ "${OS}" = "Darwin" ]
 then
-   defaults write com.apple.finder AppleShowAllFiles YES && killall Finder
-   ln -sf "${DOTTY_DIR}/dotfiles/terminal/osx_tab_title" ${USER_BIN}/tab_title
+
+  ## a lot of this comes from https://mths.be/macos
+
+  # Close any open System Preferences panes, to prevent them from overriding
+  # settings we’re about to change
+  osascript -e 'tell application "System Preferences" to quit'
+
+  # Disable the sound effects on boot
+  sudo nvram SystemAudioVolume=" "
+
+  # Save to disk (not to iCloud) by default
+  defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+  # Disable the “Are you sure you want to open this application?” dialog
+  defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+  # Save screenshots to the desktop
+  defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+
+  # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+  defaults write com.apple.screencapture type -string "png"
+
+  # Disable shadow in screenshots
+  defaults write com.apple.screencapture disable-shadow -bool true
+
+  # Finder: show all filename extensions
+  defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+  # Finder: how hidden files
+  defaults write com.apple.finder AppleShowAllFiles YES
+
+  # Finder: show status bar
+  defaults write com.apple.finder ShowStatusBar -bool true
+
+  # Finder: show path bar
+  defaults write com.apple.finder ShowPathbar -bool true
+
+  # Display full POSIX path as Finder window title
+  defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+  # Keep folders on top when sorting by name
+  defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+  # Disable the warning when changing a file extension
+  defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+  # Avoid creating .DS_Store files on network or USB volumes
+  defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+  defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+  # Use list view in all Finder windows by default
+  # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
+  defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+  # Show the ~/Library folder
+  chflags nohidden ~/Library
+
+  # Show the /Volumes folder
+  sudo chflags nohidden /Volumes
+
+  # put changes into action
+  killall Finder
+
+  ln -sf "${DOTTY_DIR}/dotfiles/terminal/osx_tab_title" ${USER_BIN}/tab_title
 fi
 
 ln -sf "${DOTTY_DIR}/dotfiles/npm/npmrc" ${HOME}/.npmrc
