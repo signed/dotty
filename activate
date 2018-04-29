@@ -1,9 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -x
 
 DOTTY_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 OS="`uname`"
+
+mkdir -p ${HOME}/bin
 
 if [ "${OS}" = "Linux" ]
 then
