@@ -77,6 +77,20 @@ then
   # put changes into action
   killall Finder
 
+  ###############################################################################
+  # Terminal & iTerm 2                                                          #
+  ###############################################################################
+
+  # Enable Secure Keyboard Entry in Terminal.app
+  # See: https://security.stackexchange.com/a/47786/8918
+  defaults write com.apple.terminal SecureKeyboardEntry -bool true
+
+  # Only use UTF-8 in Terminal.app
+  defaults write com.apple.terminal StringEncodings -array 4
+
+  # Don’t display the annoying prompt when quitting iTerm
+  defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
   ln -sf "${DOTTY_DIR}/dotfiles/terminal/osx_tab_title" ${USER_BIN}/tab_title
 fi
 
