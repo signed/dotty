@@ -14,7 +14,7 @@ then
    ln -sf "${DOTTY_DIR}/dotfiles/terminal/i3_tab_title" ${USER_BIN}/tab_title
 elif [ "${OS}" = "Darwin" ]
 then
-   defaults write com.apple.finder AppleShowAllFiles YES
+   defaults write com.apple.finder AppleShowAllFiles YES && killall Finder
    ln -sf "${DOTTY_DIR}/dotfiles/terminal/osx_tab_title" ${USER_BIN}/tab_title
 fi
 
