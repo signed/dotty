@@ -15,7 +15,8 @@ then
 elif [ "${OS}" = "Darwin" ]
 then
 
-  ## a lot of this comes from https://mths.be/macos
+  # a lot of this comes from https://mths.be/macos
+  # https://github.com/mathiasbynens/dotfiles/ looks interesting as well
 
   # Close any open System Preferences panes, to prevent them from overriding
   # settings we’re about to change
