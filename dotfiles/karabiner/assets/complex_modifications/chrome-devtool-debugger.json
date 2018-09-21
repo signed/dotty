@@ -1,0 +1,50 @@
+{
+  "title": "Chrome dev tools",
+  "rules": [
+    {
+      "description": "Intellij debug shortcuts",
+      "manipulators": [
+        {
+          "type": "basic",
+          "description": "Step Into",
+          "from": {
+            "key_code": "f7"
+          },
+          "to_if_alone": [
+            {
+              "key_code": "f11"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com\\.google\\.Chrome"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "description": "Step Over",
+          "from": {
+            "key_code": "f8"
+          },
+          "to_if_alone": [
+            {
+              "key_code": "f10"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com\\.google\\.Chrome"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
