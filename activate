@@ -4,7 +4,7 @@ set -x
 
 DOTTY_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 USER_BIN=${HOME}/bin
-OS="`uname`"
+OS="$(uname)"
 
 mkdir -p ${USER_BIN}
 
