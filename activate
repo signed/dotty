@@ -8,13 +8,10 @@ OS="$(uname)"
 
 mkdir -p "${USER_BIN}"
 
-if [ "${OS}" = "Linux" ]
-then
+if [ "${OS}" = "Linux" ]; then
   ln -sf "${DOTTY_DIR}/dotfiles/i3" ~/.i3
   ln -sf "${DOTTY_DIR}/dotfiles/terminal/i3_tab_title" "${USER_BIN}"/tab_title
-elif [ "${OS}" = "Darwin" ]
-then
-
+elif [ "${OS}" = "Darwin" ]; then
   # a lot of this comes from https://mths.be/macos
   # https://github.com/mathiasbynens/dotfiles/ looks interesting as well
 
