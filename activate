@@ -93,4 +93,5 @@ elif [ "${OS}" = "Darwin" ]; then
   ln -sf "${DOTTY_DIR}/dotfiles/kitty" ~/.config/kitty
 fi
 
-ln -sf "${DOTTY_DIR}/dotfiles/npm/npmrc" "${HOME}"/.npmrc
+ln -sf "${DOTTY_DIR}"/dotfiles/npm/npmrc "${HOME}"/.npmrc
+ln -sf "${DOTTY_DIR}"/dotfiles/git/.gitconfig "${HOME}"/.gitconfig

@@ -1,2 +1,4 @@
 .idea/
 *.iml
+
+dotfiles/git/.gitconfig-work
