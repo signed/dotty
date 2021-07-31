@@ -5,6 +5,14 @@ Dotfiles, my dotfiles.
 ````
 ./activate
 ````
+# zsh function loading
+add those lines to your `~/.zshrc`
+
+```
+fpath=("$HOME/dev/github/signed/dotty/dotfiles/zsh/functions
+. "$HOME/dev/github/signed/dotty/dotfiles/zsh/autoload_functions"
+```
+ 
 
 # Opportunities
 
