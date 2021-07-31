@@ -5,12 +5,12 @@ Dotfiles, my dotfiles.
 ````
 ./activate
 ````
-# zsh function loading
+# [zsh function loading](https://dev.to/lukeojones/1up-your-zsh-abilities-by-autoloading-your-own-functions-2ngp)
 add those lines to your `~/.zshrc`
 
 ```
 fpath=("$HOME/dev/github/signed/dotty/dotfiles/zsh/functions
-. "$HOME/dev/github/signed/dotty/dotfiles/zsh/autoload_functions"
+autoload -Uz $fpath[1]/*(.:t)
 ```
  
 
