@@ -11,3 +11,6 @@ bin
 
 ## Mac OS stuff
 .DS_Store
+
+## Yarn
+yarn-error.log
