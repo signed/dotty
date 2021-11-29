@@ -95,3 +95,4 @@ fi
 
 ln -sf "${DOTTY_DIR}"/dotfiles/npm/npmrc "${HOME}"/.npmrc
 ln -sf "${DOTTY_DIR}"/dotfiles/git/.gitconfig "${HOME}"/.gitconfig
+ln -sf "${DOTTY_DIR}/dotfiles/terminal/git-squash" "${USER_BIN}"/git-squash

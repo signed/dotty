@@ -1,0 +1,39 @@
+#!/usr/bin/env sh
+# inspirations:
+# https://stackoverflow.com/questions/25356810/git-how-to-squash-all-commits-on-branch#comment90323165_25357146
+# https://github.com/sheerun/git-squash
+
+set -e
+
+CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "$1" = "" ]; then
+  echo "Squash all commits of the current branch onto the merge-base with <branch>"
+  echo ""
+  echo "Usage: git squash <branch>"
+  echo ""
+  echo "Examples"
+  echo " - git squash main"
+  exit 1
+fi
+
+if [ "$(git status -s -u no)" != "" ]; then
+  echo "Please commit all changes before squashing"
+  exit 1
+fi
+
+if ! git show-ref "$1" > /dev/null; then
+  echo "Branch $1 does not exist"
+  exit 1
+fi
+
+FIRST_COMMIT_ID=$(git log "$1".. --no-merges --pretty=format:%h | tail -1)
+
+if [ "$FIRST_COMMIT_ID" = "" ]; then
+  echo "There are no changes to be squashed"
+  exit 1
+fi
+
+git reset "$(git merge-base "$1" "$CURRENT_BRANCH")"
+
+
