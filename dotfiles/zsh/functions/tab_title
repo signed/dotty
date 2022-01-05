@@ -1,0 +1,7 @@
+# https://stackoverflow.com/questions/46721797/how-to-change-the-terminal-title
+tab_title () {
+    readonly title=${1:?"The title must be specified."}
+    echo -en "\e]2;$title\a"
+}
+
+tab_title "$@"
