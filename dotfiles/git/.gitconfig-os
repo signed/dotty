@@ -1,5 +1,3 @@
 [user]
   name = Thomas Heilbronner
   email = thomas.heilbronner@gmail.com
-[credential]
-  helper = osxkeychain
