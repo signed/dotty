@@ -1,7 +1,7 @@
 [user]
   name = Thomas Heilbronner
 [include]
-  path = ~/dev/github/signed/dotty/dotfiles/git/.gitconfig-work
+  path = ~/dev/github/signed/dotty/dotfiles/git/.gitconfig-local
 [includeif "gitdir:~/dev/github/signed/"]
   path = ~/dev/github/signed/dotty/dotfiles/git/.gitconfig-os
 [includeif "gitdir:~/dev/github/mob-archive/"]
