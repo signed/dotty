@@ -10,7 +10,6 @@
   excludesfile = ~/dev/github/signed/dotty/dotfiles/git/.gitignore_global
   autocrlf = false
   editor = vim
-  pager = diff-so-fancy | less --tabs=4 -RFX
 [pull]
   rebase = true
 [init]
