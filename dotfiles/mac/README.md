@@ -2,3 +2,9 @@
 
 https://apple.stackexchange.com/questions/16135/remap-home-and-end-to-beginning-and-end-of-line
 https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/EventOverview/TextDefaultsBindings/TextDefaultsBindings.html
+
+## Install
+
+```shell
+cp dotfiles/mac/Library/KeyBindings/DefaultKeyBinding.dict ~/Library/KeyBindings/
+```
