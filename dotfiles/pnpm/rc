@@ -1,1 +1,3 @@
+# recommended to replace with a config-dependency https://pnpm.io/config-dependencies
+# https://github.com/pnpm/pnpm/issues/9921#issuecomment-3292521911
 minimum-release-age=10080
