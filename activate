@@ -90,6 +90,8 @@ elif [ "${OS}" = "Darwin" ]; then
   defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
   ln -sf "${DOTTY_DIR}/dotfiles/kitty" ~/.config/kitty
+  mkdir -p ~/Library/Preferences/pnpm
+  ln -sf "${DOTTY_DIR}/dotfiles/pnpm/rc" ~/Library/Preferences/pnpm/rc
 fi
 
 ln -sf "${DOTTY_DIR}"/dotfiles/npm/npmrc "${HOME}"/.npmrc
